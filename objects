@@ -1,5 +1,6 @@
 ##نظام بنكي بسيط (بدايه تعلم الكائنات)
 class Bank:
+    bankname="ggg"
     def __init__(self,name,raseed):
         self.name=name
         self.__raseed=raseed
@@ -19,9 +20,22 @@ class Bank:
             print("erorr")
         else:
             self.__raseed-=many
+            
+class SavingAccount(Bank):
+    def __init__(self,name,raseed,interest_rate):
+         super().__init__(name,raseed)
+         self.interest_rate=interest_rate
+    def apply_interest(self):
+        fayda= self.get_raseed()*self.interest_rate
+        self.eedaa(fayda)
+        
+print(Bank.bankname)
 my_acc=Bank("mahmoud",500)
 print(my_acc.get_raseed())
 my_acc.eedaa(50)
 print(my_acc.get_raseed())
 my_acc.saheb(500)
-print(my_acc.get_raseed())
+my_savings = SavingAccount("Mahmoud VIP", 1000, 0.1)
+print("رصيد التوفير قبل الفائدة:", my_savings.get_raseed())
+my_savings.apply_interest() 
+print("رصيد التوفير بعد إضافة الفائدة:", my_savings.get_raseed())
