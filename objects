@@ -1,0 +1,27 @@
+##نظام بنكي بسيط (بدايه تعلم الكائنات)
+class Bank:
+    def __init__(self,name,raseed):
+        self.name=name
+        self.__raseed=raseed
+        
+    def get_raseed(self):
+        return self.__raseed
+        
+    def eedaa(self,many):
+        if many > 0:
+            self.__raseed+=many
+            print("done")
+        else:
+            print("nooo its erorr")
+            
+    def saheb(self,many):
+        if many>self.__raseed or many <= 0:
+            print("erorr")
+        else:
+            self.__raseed-=many
+my_acc=Bank("mahmoud",500)
+print(my_acc.get_raseed())
+my_acc.eedaa(50)
+print(my_acc.get_raseed())
+my_acc.saheb(500)
+print(my_acc.get_raseed())
