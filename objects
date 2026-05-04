@@ -39,3 +39,47 @@ my_savings = SavingAccount("Mahmoud VIP", 1000, 0.1)
 print("رصيد التوفير قبل الفائدة:", my_savings.get_raseed())
 my_savings.apply_interest() 
 print("رصيد التوفير بعد إضافة الفائدة:", my_savings.get_raseed())
+**********************************************************************************
+مثال مكتبه القدس
+class Jarosalim_Librari:
+    def __init__(self,name,bookname,bookprice):
+        self.name=name
+        self.__bookname=bookname
+        self.__bookprice=bookprice
+    def get_name(self):
+        return self.name
+        
+    def get_bookname(self):
+        return self.__bookname
+        
+    def get_price(self):
+        return self.__bookprice
+        
+    def discout(self,discount):
+        if self.__bookprice >=100:
+            self.__bookprice=self.__bookprice-discount
+            print("تم خصم ٥٠ بالميه من سعر الكتاب ")
+class PalestineHistory(Jarosalim_Librari):
+    def __init__(self,name,bookname,bookprice,bookyere):
+        super().__init__(name,bookname,bookprice)
+        self.bookyere=bookyere
+            
+book1=Jarosalim_Librari("Jarosalim_Librari","book quran",120)
+
+print(book1.get_name())
+book1.get_bookname()
+print(book1.get_bookname())
+book1.get_price()
+print(book1.get_price())
+book1.discout(20)
+book1.get_price()
+print(book1.get_price())
+
+book2 = PalestineHistory("مكتبة القدس", "تاريخ فلسطين", 150, 1948)
+
+my_pal_book.discout(30) 
+
+print(f"المكتبة: {my_pal_book.get_name()}")
+print(f"الكتاب: {my_pal_book.get_bookname()}")
+print(f"السعر النهائي: {my_pal_book.get_price()}")
+print(f"سنة الحدث: {my_pal_book.bookyere}")
