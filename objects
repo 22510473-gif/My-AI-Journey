@@ -77,9 +77,9 @@ print(book1.get_price())
 
 book2 = PalestineHistory("مكتبة القدس", "تاريخ فلسطين", 150, 1948)
 
-my_pal_book.discout(30) 
+book2.discout(30) 
 
-print(f"المكتبة: {my_pal_book.get_name()}")
-print(f"الكتاب: {my_pal_book.get_bookname()}")
-print(f"السعر النهائي: {my_pal_book.get_price()}")
-print(f"سنة الحدث: {my_pal_book.bookyere}")
+print(f"المكتبة: {book2.get_name()}")
+print(f"الكتاب: {book2.get_bookname()}")
+print(f"السعر النهائي: {book2.get_price()}")
+print(f"سنة الحدث: {book2.bookyere}")
