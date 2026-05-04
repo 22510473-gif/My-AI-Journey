@@ -42,13 +42,11 @@ print("رصيد التوفير بعد إضافة الفائدة:", my_savings.ge
 **********************************************************************************
 مثال مكتبه القدس
 class Jarosalim_Librari:
-    def __init__(self,name,bookname,bookprice):
-        self.name=name
+    des = "مكتبه القدس الشريف"
+    def __init__(self,bookname,bookprice):
         self.__bookname=bookname
         self.__bookprice=bookprice
-    def get_name(self):
-        return self.name
-        
+   
     def get_bookname(self):
         return self.__bookname
         
@@ -58,15 +56,17 @@ class Jarosalim_Librari:
     def discout(self,discount):
         if self.__bookprice >=100:
             self.__bookprice=self.__bookprice-discount
-            print("تم خصم ٥٠ بالميه من سعر الكتاب ")
+            print(f"تم خصم {discount} من سعر الكتاب ")
+    def show(self):
+        print(Jarosalim_Librari.des)
 class PalestineHistory(Jarosalim_Librari):
-    def __init__(self,name,bookname,bookprice,bookyere):
-        super().__init__(name,bookname,bookprice)
+    def __init__(self,bookname,bookprice,bookyere):
+        super().__init__(bookname,bookprice)
         self.bookyere=bookyere
             
-book1=Jarosalim_Librari("Jarosalim_Librari","book quran",120)
+book1=Jarosalim_Librari("book quran",120)
+book1.show()
 
-print(book1.get_name())
 book1.get_bookname()
 print(book1.get_bookname())
 book1.get_price()
@@ -75,11 +75,11 @@ book1.discout(20)
 book1.get_price()
 print(book1.get_price())
 
-book2 = PalestineHistory("مكتبة القدس", "تاريخ فلسطين", 150, 1948)
+book2 = PalestineHistory( "تاريخ فلسطين", 150, 1948)
 
 book2.discout(30) 
 
-print(f"المكتبة: {book2.get_name()}")
 print(f"الكتاب: {book2.get_bookname()}")
 print(f"السعر النهائي: {book2.get_price()}")
 print(f"سنة الحدث: {book2.bookyere}")
+
